@@ -1,10 +1,16 @@
+let g:python_host_prog='/usr/bin/python2.7'
 " Vundle
 set nocompatible              " be iMproved, required
 filetype off
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('nvim')
+    set rtp+=~/.nvim/bundle/Vundle.vim
+    call vundle#begin('~/.nvim/bundle')
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+endif
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -18,17 +24,24 @@ Plugin 'gmarik/Vundle.vim'
 " graphical undo-tree
 Plugin 'vim-scripts/Gundo'
 
-Plugin 'raimondi/delimitmate'
-
-Plugin 'vim-scripts/Conque-GDB'
-
-Plugin 'AutoComplPop'
+"disabled because it messes with too many things...
+"Plugin 'raimondi/delimitmate'
 
 Plugin 'b4winckler/vim-angry'
 
 Plugin 'vim-scripts/Mark'
 
 Plugin 'fholgado/minibufexpl.vim'
+
+Plugin 'mfukar/robotframework-vim'
+
+" trying something out with this...temporary
+Plugin 'bfredl/nvim-ipy'
+
+if has('nvim')
+    Bundle 'https://github.com/freeo/vim-kalisi'
+endif
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,10 +77,15 @@ set lbr
 " colorscheme delek
 " colorscheme murphy
 " colorscheme desert
-colorscheme solarized
-" when running macvim this happens automatically, but in my terminal it
-" doesn't...
-set background=light
+if has('nvim')
+    colorscheme kalisi
+    set background=light
+else
+    colorscheme solarized
+    " when running macvim this happens automatically, but in my terminal it
+    " doesn't...
+    set background=light
+endif
 
 " pattern matching while typing
 set incsearch
@@ -108,7 +126,7 @@ set splitbelow
 set list
 set listchars=tab:▸\ 
 
-" Cursorline {{{
+" Cursorline
 " Only show cursorline in the current window and in normal mode.
 set cursorline
 augroup cline
@@ -145,14 +163,22 @@ nnoremap S "_diwP
 " autocompletion shouldn't hijack my enter-key - http://stackoverflow.com/questions/17043699/how-can-i-remap-autocompletion-in-vim
 inoremap <expr> <CR> pumvisible() ? '<C-e><CR>' : '<CR>'
 
-" disable acp-Plugin on conqueterm
-au! WinEnter * :if &ft=='conque_term' | AcpDisable | else | AcpEnable | endif
-
-autocmd FileType conque_term set fdm=marker
-
-let g:ConqueTerm_ReadUnfocused = 1
-
-" prevent \r and \n conflict between conque_gdb and mark.vim
-let g:ConqueGdb_Leader = '-'
-
 " TODO try out plugin 'endwise'
+
+
+
+if has('nvim')
+
+    function StartTerminal()
+        terminal bash -l
+        set fdm=marker
+        set scrolloff=0
+    endfunction
+
+    command Term call StartTerminal()
+
+
+
+    tnoremap <Esc> <C-\><C-n>
+    let g:terminal_scrollback_buffer_size=100000
+endif
