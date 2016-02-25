@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ln -s ~/dotfiles/zshrc ~/.zshrc
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ln -s ~/dotfiles/vimrc ~/.vimrc
 
