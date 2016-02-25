@@ -182,3 +182,7 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
     let g:terminal_scrollback_buffer_size=100000
 endif
+
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" check out gitgutter
