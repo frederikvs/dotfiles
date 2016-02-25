@@ -106,8 +106,6 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-zle reset-prompt
-
 
 renson=/Users/frederikvanslycken/Projects/renson/hoc/code-Main/hoc/src
 picotcp=/Users/frederikvanslycken/Projects/picoTCP/picotcp
