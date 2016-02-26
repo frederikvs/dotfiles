@@ -34,6 +34,7 @@ function zle-line-init zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+bindkey '^r' history-incremental-search-backward
 
 
 renson=/Users/frederikvanslycken/Projects/renson/hoc/code-Main/hoc/src
