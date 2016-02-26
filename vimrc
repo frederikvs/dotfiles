@@ -38,6 +38,8 @@ Plugin 'mfukar/robotframework-vim'
 " trying something out with this...temporary
 Plugin 'bfredl/nvim-ipy'
 
+Bundle 'altercation/vim-colors-solarized'
+
 if has('nvim')
     Bundle 'https://github.com/freeo/vim-kalisi'
 endif
