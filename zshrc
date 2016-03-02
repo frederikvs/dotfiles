@@ -44,6 +44,7 @@ zle -N zle-keymap-select
 bindkey '^r' history-incremental-search-backward
 
 
-renson=/Users/frederikvanslycken/Projects/renson/hoc/code-Main/hoc/src
+renson=/Users/frederikvanslycken/Projects/renson/skye/skye/src
+rentest=/Users/frederikvanslycken/Projects/renson/skye/skye/testing
 picotcp=/Users/frederikvanslycken/Projects/picoTCP/picotcp
 tcd=/Users/frederikvanslycken/Projects/picoTCP/tass-connected-device
