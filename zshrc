@@ -26,8 +26,6 @@ else
   export EDITOR='mvim'
 fi
 
-alias clr="clear;clear"
-
 export DEFAULT_USER=frederikvanslycken
 export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
