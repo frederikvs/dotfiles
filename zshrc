@@ -15,7 +15,12 @@ plugins=(git vi-mode)
 
 # User configuration
 
-export PATH="/opt/local/bin:/opt/local/sbin:/Users/frederikvanslycken/toolchains/gcc-arm-none-eabi-4_9-2015q1/bin/:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/CrossPack-AVR/bin:/usr/local/git/bin:/usr/texbin:/Users/frederikvanslycken/Projects/Android/sdk/tools:/Users/frederikvanslycken/Projects/Android/sdk/platform-tools:/Applications/microchip/xc32/v1.40/bin"":/Applications/microchip//mplabx/v3.20/mplab_ide.app/Contents/Resources/mplab_ide/bin"
+PATH="/opt/local/bin:/opt/local/sbin:/Users/frederikvanslycken/toolchains/gcc-arm-none-eabi-4_9-2015q1/bin/:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/CrossPack-AVR/bin:/usr/local/git/bin:/usr/texbin"
+PATH=$PATH:"/Users/frederikvanslycken/Projects/Android/sdk/tools:/Users/frederikvanslycken/Projects/Android/sdk/platform-tools"
+PATH=$PATH":/Applications/microchip/xc32/v1.40/bin:/Applications/microchip//mplabx/v3.20/mplab_ide.app/Contents/Resources/mplab_ide/bin"
+PATH=$PATH:"/Users/frederikvanslycken/bin/cov-analysis-macosx-7.7.0.4/bin"
+
+export PATH
 
 source $ZSH/oh-my-zsh.sh
 
