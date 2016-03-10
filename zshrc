@@ -46,7 +46,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 bindkey '^r' history-incremental-search-backward
 
-unsetopt shared_history
+unsetopt share_history
 
 
 renson=/Users/frederikvanslycken/Projects/renson/skye/skye/src
