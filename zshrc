@@ -46,7 +46,24 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 bindkey '^r' history-incremental-search-backward
 
-unsetopt share_history
+# I want global history for e.g. ctrl-R lookup, but local history for e.g. ctrl-P, up-arrow
+# thanks to http://superuser.com/a/1025836 , only the bindkey mentioned there didn't work for me. I found out what worked by going ctrl-V <up-arrow>, which printed ^[[A, which works... YMMV
+up-line-or-local-history() {
+    zle set-local-history 1
+    zle up-line-or-history
+    zle set-local-history 0
+}
+zle -N up-line-or-local-history
+down-line-or-local-history() {
+    zle set-local-history 1
+    zle down-line-or-history
+    zle set-local-history 0
+}
+zle -N down-line-or-local-history
+bindkey '^P' up-line-or-local-history     # ctrl-P
+bindkey '^N' down-line-or-local-history   # ctrl-N
+bindkey '^[[A' up-line-or-local-history     # Cursor up
+bindkey '^[[B' up-line-or-local-history     # Cursor up
 
 
 renson=/Users/frederikvanslycken/Projects/renson/skye/skye/src
