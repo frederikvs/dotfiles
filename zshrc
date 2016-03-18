@@ -65,8 +65,10 @@ bindkey '^N' down-line-or-local-history   # ctrl-N
 bindkey '^[[A' up-line-or-local-history     # Cursor up
 bindkey '^[[B' up-line-or-local-history     # Cursor up
 
-
 renson=/Users/frederikvanslycken/Projects/renson/skye/skye/src
 rentest=/Users/frederikvanslycken/Projects/renson/skye/skye/testing
 picotcp=/Users/frederikvanslycken/Projects/picoTCP/picotcp
 tcd=/Users/frederikvanslycken/Projects/picoTCP/tass-connected-device
+# no-op command ; causes these named directories to be used right away
+# see http://zsh.sourceforge.net/Guide/zshguide02.html
+: ~renson ~rentest ~picotcp ~tcd
