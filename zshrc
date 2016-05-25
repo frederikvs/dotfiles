@@ -11,7 +11,7 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 
 ENABLE_CORRECTION="true"
 
-plugins=(git vi-mode zsh-autosuggestions)
+plugins=(git vi-mode)
 
 # User configuration
 
