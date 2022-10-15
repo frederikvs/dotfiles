@@ -2,7 +2,6 @@
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ln -s ~/dotfiles/zshrc ~/.zshrc
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 ln -s ~/dotfiles/vimrc ~/.vimrc
 
