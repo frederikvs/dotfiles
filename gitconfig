@@ -1,0 +1,18 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Frederik Van Slycken
+	email = frederik.van.slycken@gmail.com
+[alias]
+    slg = log --graph --decorate --abbrev-commit --format=\"%C(auto) %h %d %s  %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset\"
+    #slg = log --graph --decorate --pretty=oneline --abbrev-commit
+[merge]
+	tool = mvimdiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	autocrlf = input
+	editor = mvim -f
